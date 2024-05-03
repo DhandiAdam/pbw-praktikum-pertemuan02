@@ -14,15 +14,16 @@ func GetById(id string) error {
 	if id == "" {
 		return ValidationError
 	}
-	if id != "0147" {
+
+	if id != "Dhandi" {
 		return NotFoundError
 	}
-	// sukses
+
 	return nil
 }
 
 func main() {
-	err := GetById("Dhandi")
+	err := GetById("d")
 	if err != nil {
 		if errors.Is(err, ValidationError) {
 			fmt.Println("validation error")
