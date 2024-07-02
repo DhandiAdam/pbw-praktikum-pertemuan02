@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Login</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      html,
+      body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        place-items: center;
+
+        background-color: #17182f;
+        transition: background-color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+          color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      body.dark-mode {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+      }
+
+      body.light-mode {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+      }
+
+      .settings {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+      }
+
+      ::selection {
+        background: #1ec79f;
+        color: #fff;
+      }
+      .wrapper {
+        overflow: hidden;
+        max-width: 390px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: rgb(2, 176, 133) 0px 20px 30px -10px;
+        transition: background-color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+          color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        width: 100%;
+        height: auto;
+        max-height: 97vh; /* Batas tinggi maksimum */
+        min-height: 200px; /* Tinggi minimum, sesuaikan sesuai kebutuhan */
+      }
+
+      .wrapper .title-text {
+        display: flex;
+        width: 200%;
+        color: #0dd2a4;
+      }
+
+      .wrapper .title {
+        width: 50%;
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      .wrapper .slide-controls {
+        position: relative;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+        margin: 30px 0 10px 0;
+        justify-content: space-between;
+        border: 1px solid lightgrey;
+        border-radius: 15px;
+      }
+
+      .slide-controls .slide {
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 48px;
+        cursor: pointer;
+        z-index: 1;
+        transition: all 0.6s ease;
+      }
+      .slide-controls label.signup {
+        color: #000;
+      }
+      .slide-controls .slider-tab {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 0;
+        z-index: 0;
+        border-radius: 15px;
+        background: -webkit-linear-gradient(
+          right,
+          #59f7ca,
+          #0bffba,
+          #02ecc1,
+          #0add9a
+        );
+
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      #signup:checked ~ .slider-tab {
+        left: 50%;
+      }
+      #signup:checked ~ label.signup {
+        color: #fff;
+        cursor: default;
+        user-select: none;
+        font-size: large;
+      }
+      #signup:checked ~ label.login {
+        color: #008568;
+      }
+      #login:checked ~ label.signup {
+        color: #199668;
+      }
+      #login:checked ~ label.login {
+        cursor: default;
+        user-select: none;
+      }
+      .wrapper .form-container {
+        width: 100%;
+        overflow: hidden;
+      }
+      .form-container .form-inner {
+        display: flex;
+        width: 200%;
+      }
+      .form-container .form-inner form {
+        width: 50%;
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 1;
+      }
+      .form-inner form .field {
+        /* height: 50px;
+        width: 100%;
+        margin-top: 20px; */
+      }
+      .form-inner form .field input {
+        height: 40px;
+        width: 100%;
+        outline: none;
+        padding-left: 15px;
+        border-radius: 15px;
+        border: 1px solid lightgrey;
+        border-bottom-width: 2px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+      .form-inner form .field input:focus {
+        border-color: #1abba3;
+        /* box-shadow: inset 0 0 3px #fb6aae; */
+      }
+      .form-inner form .field input::placeholder {
+        color: #999;
+        transition: all 0.3s ease;
+      }
+      form .field input:focus::placeholder {
+        color: #09b79f;
+      }
+      .form-inner form .pass-link {
+        margin-top: 25px;
+      }
+      .form-inner form .signup-link {
+        text-align: center;
+        margin-top: 10px;
+        padding: 1px;
+      }
+      .form-inner form .pass-link a,
+      .form-inner form .signup-link a {
+        color: #199668;
+        text-decoration: none;
+      }
+      .form-inner form .pass-link a:hover,
+      .form-inner form .signup-link a:hover {
+        text-decoration: underline;
+      }
+      form .btn {
+        height: 50px;
+        width: 100%;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 10px;
+      }
+      form .btn .btn-layer {
+        height: 100px;
+        width: 300%;
+        position: absolute;
+        left: -100%;
+        background: -webkit-linear-gradient(
+          right,
+          #019f8f,
+          #02bdb1,
+          #00ffc4,
+          #3dedb8
+        );
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+      form .btn:hover .btn-layer {
+        left: 0;
+        color: #008568;
+      }
+      form .btn input[type="submit"] {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        background: none;
+        border: none;
+        color: #fff;
+        padding-left: 0;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      /* ---- particles.js container ---- */
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      canvas {
+        display: block;
+        vertical-align: bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- INI ADALAH HALAMAN HTML -->
+    <div id="particles-js"></div>
+    <div class="wrapper" id="wrapper">
+      <div class="title-text">
+        <div class="title login">Form Login</div>
+        <div class="title signup">Form Registrasi</div>
+      </div>
+
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked />
+          <input type="radio" name="slide" id="signup" />
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Daftar</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form
+            name="loginForm"
+            action="/login"
+            method="post"
+            class="login"
+            onsubmit="return validateForm()"
+          >
+            {{ if .error }}
+            <div class="alert alert-danger">{{ .error }}</div>
+            {{ end }}
+            <pre></pre>
+            <div class="field">
+              <label
+                >Username
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control {{ if .validation.Username }} is-invalid {{ end }}"
+                  autocomplete="off"
+                />
+              </label>
+              <div class="invalid-feedback">{{ .validation.Username }}</div>
+            </div>
+
+            <div class="field">
+              <label
+                >Password
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control {{ if .validation.Password }} is-invalid {{ end }}"
+                  autocomplete="off"
+                />
+              </label>
+              <div class="invalid-feedback">{{ .validation.Password }}</div>
+            </div>
+            <div class="pass-link"><a href="#">Lupa password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login" />
+            </div>
+            <div class="signup-link">
+              Buat akun <a href="/register">Daftar sekarang</a>
+            </div>
+          </form>
+
+          <!--  -->
+
+          <!-- Register Start -->
+          <form
+            name="registerForm"
+            action="/register"
+            method="post"
+            class="register"
+            onsubmit="return validateRegister()"
+          >
+            {{ if .pesan }}
+            <div class="alert alert-success">{{ .pesan }}</div>
+            <hr />
+            {{ end }}
+
+            <div class="field">
+              <label for="">Nama Lengkap</label>
+              <input
+                type="text"
+                name="nama_lengkap"
+                value="{{ .user.NamaLengkap }}"
+                class="form-control {{ if .validation.NamaLengkap }} is-invalid {{ end }}"
+              />
+              <div class="invalid-feedback">{{ .validation.NamaLengkap }}</div>
+            </div>
+            <div class="field">
+              <label for="">E-Email</label>
+              <input
+                type="text"
+                name="email"
+                value="{{ .user.Email }}"
+                class="form-control {{ if .validation.Email }} is-invalid {{ end }}"
+              />
+              <div class="invalid-feedback">{{ .validation.Email }}</div>
+            </div>
+            <div class="field" id="alert-placeholder">
+              <label for="">Username</label>
+              <input
+                type="text"
+                name="username"
+                value="{{ .user.Username }}"
+                class="form-control {{ if .validation.Username }} is-invalid {{ end }}"
+              />
+              <div class="invalid-feedback">{{ .validation.Username }}</div>
+            </div>
+            <div class="field">
+              <label for="">Password</label>
+              <input
+                type="password"
+                name="password"
+                value="{{ .user.Password }}"
+                class="form-control {{ if .validation.Password }} is-invalid {{ end }}"
+              />
+              <div class="invalid-feedback">{{ .validation.Password }}</div>
+            </div>
+            <div class="field">
+              <label for="">Konfirmasi Password</label>
+              <input
+                type="password"
+                name="cpassword"
+                value="{{ .user.Cpassword }}"
+                class="form-control {{ if .validation.Cpassword }} is-invalid {{ end }}"
+              />
+              <div class="invalid-feedback">{{ .validation.Cpassword }}</div>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Daftar" />
+            </div>
+            <div class="signup-link">
+              Sudah punya akun? <a href="/login">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- END HTML -->
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 355,
+            density: {
+              enable: true,
+              value_area: 789.1476416322727,
+            },
+          },
+          color: {
+            value: "#66CDAA",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+            image: {
+              src: "img/github.svg",
+              width: 300,
+              height: 100,
+            },
+          },
+          opacity: {
+            value: 0.48927153781200905,
+            random: false,
+            anim: {
+              enable: true,
+              speed: 0.3,
+              opacity_min: 0,
+              sync: false,
+            },
+          },
+          size: {
+            value: 2,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+            distance: 150,
+            color: "#66CDAA",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 0.2,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "bubble",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 83.91608391608392,
+              size: 1,
+              duration: 3,
+              opacity: 1,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+
+    <script>
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = () => {
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      };
+      loginBtn.onclick = () => {
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      };
+      signupLink.onclick = () => {
+        signupBtn.click();
+        return false;
+      };
+
+      //Validate untuk login form
+
+      function validateForm() {
+        var username = document.forms["loginForm"]["username"].value;
+        var password = document.forms["loginForm"]["password"].value;
+
+        if (username == "") {
+          alert("Username tidak boleh kosong");
+          return false;
+        }
+
+        if (password == "") {
+          alert("Password tidak boleh kosong");
+          return false;
+        }
+      }
+
+      function validateRegister() {
+        var nama_lengkap = document.forms["registerForm"]["nama_lengkap"].value;
+        var email = document.forms["registerForm"]["email"].value;
+        var username = document.forms["registerForm"]["username"].value;
+        var password = document.forms["registerForm"]["password"].value;
+        var cpassword = document.forms["registerForm"]["cpassword"].value;
+
+        if (nama_lengkap == "") {
+          alert("Nama Lengkap Tidak Boleh Kosong");
+          return false;
+        }
+
+        if (email == "") {
+          alert("Email Tidak Boleh Kosong");
+          return false;
+        }
+        if (!email.includes("@gmail.com")) {
+          alert("Email harus menggunakan domain @gmail.com");
+          return false;
+        }
+
+        if (username == "") {
+          alert("Username Tidak Boleh Kosong");
+          return false;
+        }
+
+        if (password == "") {
+          alert("Password Tidak Boleh Kosong");
+          return false;
+        }
+
+        if (cpassword == "") {
+          alert("Konfirmasi Password Tidak Boleh Kosong");
+          return false;
+        }
+
+        if (password != cpassword) {
+          alert("Password Tidak Sama");
+          return false;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var alertMessage = "{{ .alert }}";
+        if (alertMessage) {
+          alert(alertMessage);
+        }
+      });
+
+      function toggleDarkMode() {
+        var wrapper = document.getElementById("wrapper");
+        wrapper.classList.add("dark-mode");
+        wrapper.classList.remove("light-mode");
+      }
+
+      function toggleLightMode() {
+        var wrapper = document.getElementById("wrapper");
+        wrapper.classList.remove("dark-mode");
+        wrapper.classList.add("light-mode");
+      }
+
+      //   END JAVASCRIPT
+    </script>
+  </body>
+</html>

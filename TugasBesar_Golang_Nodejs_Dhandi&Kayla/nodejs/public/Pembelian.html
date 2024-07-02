@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Food</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Box Icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="heder">
+        <!-- Nav -->
+        <div class="nav container">
+          <!-- Logo -->
+          <a href="index.html" class="logo">LokalRasa</a>
+          <!-- Cart Icon -->
+          <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+          <!-- Cart -->
+          <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <!-- Content -->
+            <div class="cart-content"></div>
+            <!-- Total -->
+            <div class="total">
+              <div class="total-title">Total</div>
+              <div class="total-price">$0</div>
+            </div>
+            <!-- Buy Button -->
+            <button type="button" class="btn-buy">Pay Now</button>
+            <!-- Close Cart -->
+            <i class="bx bx-x" id="close-cart"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <a href="sate.html" class="item">Sate</a>
+      <a href="makberat.html" class="item">Nasi</a>
+      <a href="berkuah.html" class="item">Berkuah</a>
+      <a href="ikan.html" class="item">Seafood</a>
+      <a href="sd.html" class="item">Cemilan</a>
+      <a href="sambel.html" class="item">Sambal</a>
+      <a href="kerupuk.html" class="item">Kerupuk</a>
+      <a href="minuman.html" class="item">Minuman</a>
+      <a href="Daging.html" class="item">Daging</a>
+      <a href="Spagetti.html" class="item">Spagetti</a>
+      <a href="Kebab.html" class="item">Kebab</a>
+    </div>
+    <!-- Product Section -->
+    <section class="container">
+      <h2 class="section-title">Main Menu</h2>
+      <!-- Shop Content -->
+      <div class="shop-content">
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgRUo0Qy6xtSoWPNfXsw8oSvLUL7cZRQroi0Ke8YOO6quJhyn6MgvYByTZgbEPvCGfMFqYnf6m39j5uNZKqe3uQsxTCrAJxcQRmgaaaYCM9ZiIYgqCj6nh9yp9PeB6htOETPLv_6gz-rHaXGV1GZHpusbRgUPBsxBR26Fgve0TNlQnXiw11KnRchKA8mdR7"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sate Solo</h2>
+          <p class="deskripsi">
+            Sate Solo, masakan tradisional Indonesia yang terbuat dari daging
+            marinasi yang dipanggang hingga sempurna, disajikan dengan saus
+            kacang pedas.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi0yQY8RJ3UjtlqQQh_tgxztKMMdgZI55GciGpYtDpTuw_ZWCFvbB0B8XF2nDX9DuabELLdKV_2_bg4EYdksgsRAnEUD3VJm_BtRebIce_93LUG4ljZaMyz4_Zj5Tx-SiVDJXLPdSLzTIZ5o1XFZsHQpqCZyzjJYhIe_fCkJNqAD9-7jSmXtjhyKJ8OucFz"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sate Padang</h2>
+          <p class="deskripsi">
+            Berasal dari Sumatera Barat, menggunakan daging sapi atau jeroan
+            yang disajikan dengan saus kental berwarna kuning yang terbuat dari
+            tepung beras dan rempah-rempah khas Minang.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhgdi3nEu05j7B4Bu7n-NnfNeSMoT-nc0sGYycZsLfMrB8IOHJi46CTY_3Y7OsCzWivus8zifDAm4gGabk6Q25LpblibbYuPoq10_Njaj0Vo-mh_oG2PrC9pzC630UGr1-91uwQ8lmUOzPG8VLM-kMzNsdI-wuZJb_9__Ec1rtocgTftFOxp7UgpS7vO9pA"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sate Maranggi</h2>
+          <p class="deskripsi">
+            Berasal dari Purwakarta, Jawa Barat, sate ini terbuat dari daging
+            sapi atau kambing yang sudah direndam dalam bumbu khas sebelum
+            dipanggang, dan disajikan dengan sambal oncom atau kecap manis.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiAY2FC1qhSHWql1Fd6bHD0aigKuvA0R_NqIRAcK1czyGro5Oa-c0trXrObxoLuAhtnzK3BofHXrKIRdHU0-t9AUS0yOHahyclpNHVfbNbM_Fg00jxdou-fV-aMPE0p58FU-Qh6H6zGZH6CY0_fflT7FwQXb4ceeK_Po1JDSulDNpt0LjS2jiEZGk8y7Bix"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sate Lilit Bali</h2>
+          <p class="deskripsi">
+            Berasal dari Bali, sate ini terbuat dari daging ikan yang dicincang
+            halus dan dicampur dengan parutan kelapa serta bumbu Bali, kemudian
+            dililitkan pada batang serai atau bambu.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhQDwdppLzVv6Jw4ZRa2sWCMLKW-M2tv-HmkEe2d4VQeJjpLRbrf1AwpZs9BuOyL3IPplnsNpGIIm3RiWv2uAbZUjkAk2boHxR4YvWY-Zg_v5djJe2oJilA2DIxrKXymrIA9o-HdYPmnjktl2RVCkCE8j_wWnbZ1d2GuF1N43PdRH5q2SkL4VyD5DdJy-1A"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Nasi Kuning</h2>
+          <p class="deskripsi">
+            Nasi yang dimasak dengan santan dan kunyit sehingga berwarna kuning
+            cerah. Biasanya disajikan untuk acara-acara khusus dengan lauk pauk
+            seperti ayam goreng, perkedel, telur, dan sambal goreng hati.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi9qbjDir9y9CeXt_0r1P65aM1ZjkRBTPXewApZsT4Ms3UqZIgvCk64CzrE-YzcPj71Wpc7VN9piUSsf8lUN7LIxQwdxYBgBNtg4Ri3qkbJ0JmtIk4yx4tJQf7bqWs953eTAbskqUypDuJ7SneVemZTQQnLoTAuyAU8Wt6F9WQaZw5P-Bc9BmAW01EjZ8uz"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Nasi Uduk</h2>
+          <p class="deskripsi">
+            Nasi yang dimasak dengan santan dan bumbu-bumbu seperti serai, daun
+            salam, dan daun jeruk. Biasanya disajikan dengan lauk seperti ayam
+            goreng, tempe, telur, dan sambal.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjOebfMzvI8I-8UE8zF2p5tYAbdQFuRFYenrNTnLfqjFVU9hG-GYoqTQ3n1g60rJUaWSDtffGH6epQCgbApwNKTCgGkrwD6DfBJ9BY7KNr3vt_dujX64WjLgiUGnHkeD6y3kinkd5l6Fk1ftYgKt_5aueTQyW8HaWY81cj8xesm5Dek0llK6Mt4e7xVfFG-"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Nasi Goreng</h2>
+          <p class="deskripsi">
+            Nasi yang digoreng dengan bumbu-bumbu seperti bawang putih, bawang
+            merah, kecap manis, dan berbagai tambahan seperti ayam, udang, atau
+            telur.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhJQ0AVxYIosfPB3Ppz-nhNb7yxCt407cZnO1bv1P4GTxsQF1Pf5myev8jVJgtH9NXCUDUc5xGpGLuD2UMQ4nlqrVmO9ffbbfGGWUXYjNNYgx_YbXoJ5k0Q66PVh9WZRVxy2FLYxT8l__9r66R9awIuO3Tzbc_hdj3UqqLOM3j83dYhQlJcNcg94T0uPmD6"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Nasi Padang</h2>
+          <p class="deskripsi">
+            Nasi putih yang disajikan dengan berbagai macam lauk pauk khas
+            Minang seperti rendang, ayam pop, gulai, dan sambal lado.
+          </p>
+          <br />
+          <span class="price">$1.83</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiCVlx7RUmUu3cg9dcFvyj4eQdUyq4JZbwv5oG9QGxd53JxjOeAE3IUIvBQp0_nbD_GtaMYaYQQTv_SK5HpA6ZCZW-7_Solo_1FMKqYqmWIrk2NerqlofWKHsHQm5S4GuwwYiHX_l9V7LWx5PGTAQK3NY1Oe3vxRGczWsbqjlxlZeHcUvXBhsXoPVIYYZ8k"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Soto Ayam</h2>
+          <p class="deskripsi">
+            Sup ayam berkuah kuning dengan bumbu kunyit, disajikan dengan mie
+            soun, irisan telur, kentang, dan taburan bawang goreng serta
+            seledri.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEh-noRvYgXcL-g5XZsX6H-4z8qqwq1zNhyUgSmY48O1SYlMzglSNopJoYuGyRYlLrCokCidLWWawToLnnCeLFBsPu1OcsV0NU25jBn6wppr_WDkvGvonzOF7EI85CLgRtpXJhMgJ44km6wf0TFPnPz2HJit1VjNrhN8p4w6Kg_--ekB2iGSTT3IncnJDi5v"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Soto Betawi</h2>
+          <p class="deskripsi">
+            Soto khas Betawi (Jakarta) yang berkuah santan atau susu dengan
+            isian daging sapi atau jeroan, ditambah dengan emping, acar, dan
+            sambal.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhqU5bNGa1Me6huhEMLBNsI7TslHTiKnhgSPA0oa-VD7zVNGbCR1apAUxOI8hJbYHOPoveWKAoFkaExjl7bY-A7uUwheAoRqmSewLyZVBUbDhSr9v8vPM8_NAD9cjemc3a8FPVWicFs5KNbZ8t5YXD4JHsmDn7efgRUlb7288edq33GyWUaxnoCDImH9ImN"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Soto Kudus</h2>
+          <p class="deskripsi">
+            Soto berkuah bening dari Kudus, Jawa Tengah, yang biasanya
+            menggunakan daging ayam atau kerbau dan disajikan dalam mangkuk
+            kecil dengan tauge dan bawang goreng.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiJlCooCRUsEEdhLNcuies_IeLRq4EHFFsCtZ2s4aXNJrlodnSJfysMTg9llaDfHgi9hWhG8XXzIiCldCb5nPNwyuvfiAvR5kC8eRy1hzVB0sz2DpLuP4ejgqp7ZnlHk2rKWR94MGSmuJ4g7l3f0p14HwmFdny8OKXUFzM2C03gS6AGAZfzUxm5eSwpugj4"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Soto Lamongan</h2>
+          <p class="deskripsi">
+            Soto khas Betawi (Jakarta) yang berkuah santan atau susu dengan
+            isian daging sapi atau jeroan, ditambah dengan emping, acar, dan
+            sambal.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEivfIfb9CWOksIn7Bw3mnylhJ_iKrnNW4HoFPKZXOG3Tml29ayybov2qYeojN51OvJhTIP_4q_uPhFmRMZabCzYTvlsTeYGaxL2fL1CNuZU1X6Jcd0AcGs-XmRA3-CyxFOca50HoaVo7kAkpSfkSwycINDty3Jxko6by0iACEGFrcOU5d9uZEsJepezImuN"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Cumi Asam Manis</h2>
+          <p class="deskripsi">
+            hidangan khas Asia yang terdiri dari cumi-cumi yang dimasak dengan
+            saus asam manis yang lezat.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgbhSUAPRK2c2BohSjfIfpTtyCAqnagaH9irJJBwsYoSSRi61B_rfYr1d2VHljpO_V2qIrWbDhzOhOnfeu98GZOEf99y4H46XgnEuZqCqXAK5wrKdUy2ew3b7Z59oUs2PL0f5hkNqF5sTvu3rj_mPCbenPYLcAAN8OHXfcDuqyVoAw7k9DQ7FCBgWs3JR6g"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Ikan Asam Manis</h2>
+          <p class="deskripsi">
+            Ikan yang digoreng atau dibakar kemudian disajikan dengan saus asam
+            manis.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEicSAaGJe6Eu8OZ38OxvWUpz7UWhoMA380jw2JCJXcAu8VjFSM_gplEtDlzMGWSTw30bY4g6IqYv3q2TVWy6-7ScwIJ_bHQL-ibq_Q6ijXituiZdCYH32BFoNbgWoFx3nTzA7tl_-4Wz8ZTAA6A1ua63i8bK1Aj4T_YfUjyXTU_qq7ItePSvV8MlLTSO_tG"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Gulai Ikan Mujair</h2>
+          <p class="deskripsi">
+            Ikan yang dimasak dalam kuah gulai yang kaya rempah seperti kunyit,
+            jahe, lengkuas, bawang merah, bawang putih, cabai, dan santan.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjSgLsXM5icVMR1ok4g8X0jLykXaiCme95RQr_yI95rpBOOO0CH2yOPbgs5fCTCxyXCmbDsp9AkCfimaPl6lPxy3pZbkYse6CeybXR0Z3nCLija9eiHbEiwM9y3vzxq5H-kqkiSVFmFHk-ny4FwdiU1THtkez1aIV9tt4dBcIFyD_wHHkALASVhNdhHwGvv"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Ikan Bakar</h2>
+          <p class="deskripsi">
+            Ikan utuh yang dibumbui dengan rempah-rempah khas Indonesia seperti
+            bumbu kuning lalu dipanggang atau dibakar. Biasanya disajikan dengan
+            sambal dan nasi putih.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiH3K_Mx1G7Nw4iUCWTuhKONro4IoMhEvti07KrJR9JUEzjNCcag8PFU8533R5lmr9EkHykZEIAyliz7iUcq0sRo9fhNvyNJtaA5O3Ia3_GCqdyUWLv-pMhhK2vNc56s5R7HiHqsOBF2mHiZxb6ng8sm53QzfB0agfEXZnxB4FglUktKrYG5C3wXx6ry2c-"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Mendoan</h2>
+          <p class="deskripsi">
+            Kata "mendoan" berasal dari bahasa Banyumas yang berarti "setengah
+            matang" atau "lembek", menggambarkan cara memasaknya yang khas.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjD4QftJIs-uq-HiEqnQkqZKFzanQPNYF7IDg76VFTpaog7whTXsK8_kCwZAvye4U_SnXo-8XgKSayokvYrH10o1q6eIr9OQ18AzuDQCvE2xU6nIUoDx2DshOPG9Nwdp5Yx4uGCVP1TEk7yLLwwoScJctDgNU8Xm6sxWU_aVEuhwQ9YDc0NvkRP-5DTCg3_"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Serabi</h2>
+          <p class="deskripsi">
+            sejenis pancake yang biasanya terbuat dari bahan dasar tepung beras
+            dan santan, yang memberikan rasa gurih dan tekstur yang lembut.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiG2rSjQld_-9LD0lm5L6CNnTx5snkT7FI1RmbhAXUZt8A4xwxXGMtD7mWC8_SpxvJHE6z3KU1arPJpVs7dqi0H2rn6lxjzoQ1RR9JlPyl6wgiTyOBL3YVmWg7A8yn8CwBQr_idCGMwL_F2QRvO7YkhSIPWMgjX8R7u84EZs3nVuZrK67Fee6rO1Q9nfmaw"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Rujak Buah</h2>
+          <p class="deskripsi">
+            Makanan khas Indonesia yang terdiri dari berbagai macam buah segar
+            yang dipotong-potong dan disajikan dengan saus atau bumbu kacang
+            yang pedas, manis, dan sedikit asam.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjmSNUVd3jqfGnv1QtAYjj34_uxx7x994BTUurq94cJclVzNpmLRQAuiiN585gWFv8uO_b_zNVWsgQ9ZKFK-h2RHtjIkYhANhl0AQ8thGUWG-Nt8JeatXXfI0KHfSMzVyY6qjf6Y1ZsjynlWW5RbW0nfrKAwJO8xZj29N9viYAexPtJ6ERK-u6xZtd9zU4n"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Onde-Onde</h2>
+          <p class="deskripsi">
+            Bola-bola tepung ketan yang diisi dengan kacang hijau manis dan
+            digoreng, bagian luarnya dilapisi wijen.
+          </p>
+          <br />
+          <span class="price">$1.22</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgd1Bnxw-ng4YrkncXCX8UN3PFLBvqTOS3TY2xszQj_vUg3wnwLAy1_y2y9xM-FvxW_0TUT40bbUf1A6v7Sv8ooq6qfC-JTX8k6ibHmBBioSEKoo18ks5HuGSwI-Y_1wgfDu6xB69_Eapzq3w-NkbdsP6v5qwxu0yBWIHDXA39dlLyBzA-3VT1-MOWbUa2q"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Es Dawet</h2>
+          <p class="deskripsi">
+            Campuran air gula, santan, dan cendol yang berasal dari desa Jabung,
+            Ponorogo.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEh_xuRpzbTn7MK1BhXShtH2g3dQAgW5DkbEXFhAvYKDLc8ZlTaOfaZKZNN0mso3YPyEOD7dmyT3pEUSrx-yWW54ui6A-ZcPfiLCFHGZ5rkDSbdyI88Re3jwgiUFePpv9cw4dGHzao0vuREW_kcbjtBCk7UDDL_wrRBW3XHFPoMTRovAdrepa6Z7YJ2KhpTP"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Es Teh Manis</h2>
+          <p class="deskripsi">
+            Teh hitam yang disajikan dingin dengan tambahan gula, sering
+            dihidangkan dengan es batu.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhNOLt7eYgeKy9BJvfennETikC6mFcJcO_A6sMkGPdB9ZaOWkMLE4n_e3H1hu5JC5RM5IznXVS7I57_c_2IQONiAuHoKcMgJct-rx41WZEryHjDId-euu3Sc4aNSHSKYn3popPOPSLA0F9LzPcs8kEiuwoE9dsVms-CeUtw6b3wNcjpu4PbvhS0EfLyKNcF"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Es Campur</h2>
+          <p class="deskripsi">
+            Minuman campuran dengan berbagai bahan seperti es serut, cincau,
+            nangka, kacang hijau, yang disiram dengan sirup gula dan santan.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjIkfLpSWbkX6CF1uA3l4jUS0UJ2EAqe33B5n2PWG6FCDXcrxc95bd0Fc-xFVp0EdDoLD8vFXBulDnPkhoOQwj7MzkZDJLegEtL6biYbNWWqcYIS1bPoTQRv-AUB1nqhzsyE-DJ5fyMzFZUendNsnsqxRSAT8aTgmKYLOhtQLN2vSS40muDBUzZS9OKzud7"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Es Jeruk</h2>
+          <p class="deskripsi">
+            Minuman segar dari perasan jeruk dengan tambahan gula dan es batu.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEieKZ9t5VL3SwLtbEw4ipxJ74IEYMFDHF0xQ35bzKhgl24ZUZHWLCp0sziKyFzAiiOP0lzdN-EXs9xsJ7Je8ujL-hZBlWYLSlqBfAO7RsXpXHmWJ7inraoL2T3oGSqbVGRtjDdTt_9onzf4JqinkZ2SS5R_VWABcV-t218avX-vKRxqwysC8YLeQgzvMWo5"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sambel Terasi</h2>
+          <p class="deskripsi">
+            Sambal ini terbuat dari cabai rawit yang diulek bersama dengan
+            terasi (pasta udang fermentasi), bawang merah, bawang putih, gula,
+            garam, dan kadang-kadang ditambah dengan tomat.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjzS1T-ArAasBbNB_2AcmfJCGPzLY7f8a8SIwxG7bwg1fVvS5hsMPMrz-4pJUDAt4iNY3PKrJuTwxWoGURzGMgwZUXLF6eewcIuKn9kQ1PvL45r6898U_o_1Cd-ZIevNinmc7nirm4FjF2vBB2Z3gDa07yTwaU1IS59FhrGmyowuiMcUKyR53_ZgR6zMRYL"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sambel Matah</h2>
+          <p class="deskripsi">
+            Asalnya dari Bali, sambal ini terdiri dari irisan tipis cabai rawit,
+            bawang merah, bawang putih, serai, daun jeruk, dan disiram dengan
+            minyak panas.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiU4fC4LZFNrnElExuJ7gW85dev0sZ6GU-4EnLYcHwb8yQcFvlmaykLoEiFe6stkkcuYwuO3jK8uq2XxqfYC9YzfhV4pgg8T80FbCHpchXCpffCVR9bsWKDegPR5t_Y9ZY5163_Kjb05DTl-cQZmw-boMdXMD9Y7bYDr98GDvIxaU2cwcN3xl9v61PMXr3T"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sambel Ijo</h2>
+          <p class="deskripsi">
+            Sambal Hijau yang terbuat dari berbagai macam Cabai Hijau segar
+            dengan cara dimasak dengan aneka rempah-rempah bumbu segar tanpa
+            pengawet sehingga memiliki rasa yang khas nikmat sebagai pendamping
+            makan sehari-hari.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjXZPVIeIyMyvesfvcMLqmJG1ecyOYI9kWA3JlcF7BridfyYmtia5opbUoQU_OxVKRzMkh4pGM0xOxsk_F_8lpk7-gaqUPdQyWv-S3itpnADjZDWlX9xIp7rNiGMe-UxbfKyrb3iQWeaxLk-QneqmGTbp1Ub21aDDyOuzkmEnIrNPkhIcxjsyCqjPKiBFUn"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Sambel Kemangi</h2>
+          <p class="deskripsi">
+            Sambal khas Indonesia yang memiliki cita rasa segar dan aromatik
+            karena menggunakan daun kemangi sebagai bahan utamanya.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgWb4BCx0eY7HnNGB5YoNGLkZcYKpeHzxvbmCHdJ5dMT3VHTl07MTurM3FBE2z_pOBSGFqltu33KEx3SjGVb-rgXtJP3oltdy37Va541ysXOj2axOXEBhfzYKk69EKqnha4Unz5JnIi0KWJrhGGYuHYlYSKqt6ssMVkAXbZOp6Yxv8juhFQiR0_eB3zvj1F"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Kerupuk Putih</h2>
+          <p class="deskripsi">
+            Kerupuk ini terbuat dari tepung tapioka atau tepung kanji yang
+            digoreng hingga mengembang dan memiliki tekstur yang renyah.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiMDUy1Z4eutdniAww7Nsc_Z8sNPnQey8NR_PYsJwzsLI4QDnZTJH2BJU28QWgTEMCglBHE3EdPsvb7H8bnqZvs-fsmNfbz32tZnFY45KFAHHk3_Jy9G_36N4MI1Z2s3Fkcm_U6Vxs6L5nPCLAgLQ-GpgxgFxSiXPQ3t3U-jk6v2O-AUxdkWMEL6WImiqwq"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Kerupuk Kulit</h2>
+          <p class="deskripsi">
+            Kerupuk kulit dibuat dari kulit sapi yang dipotong tipis, direndam,
+            lalu digoreng hingga kering.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi-o4br_hQ1yrJxFi2CjtNQMx5-FeiE0sugXDOwgEf0D2APi4K2Sbm6eUfU59usKxbQYOz6FIJC7TN2AEZJ2qAQcTFRc-WUJLtZvYdojEan172SktPfNJwNHRakx3iVm2mqltWQd2Tj0OqFXGeYZgsMwABYTyzxI17kzy1OjX_udlGnuQZBnzMyHpaTwlYk"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Kerupuk Udang</h2>
+          <p class="deskripsi">
+            Kerupuk yang terbuat dari campuran tepung tapioka dan udang yang
+            sudah dihaluskan. Biasanya digoreng hingga mengembang dan renyah.
+          </p>
+          <br />
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiFda_tpMY8yTAq0mzBgrrVPxakkxQ0fa_V2s2Gv4qLWEgD7eUS7gvECbzBKNbscNMpVycuKxddOBO_haBkzeqeGbAb3Ng54oHVRCChFKtVppoUavF8SVHr1H5qz4ceLaIzvEoo29mZ3LeFgi39Njg6sutQEokm_gY8xff8uesQNpmCCPy_ElWLTd2IN1ZG"
+            alt=""
+            class="product-img"
+          />
+          <h2 class="product-title">Rempeyek</h2>
+          <p class="deskripsi">
+            Cemilan dari tepung beras dan tepung tapioka yang dicampur dengan
+            air hingga membentuk adonan kental, diberi bumbu.
+          </p>
+          <br />
+          <div class="product-footer"></div>
+          <span class="price">$0.12</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+      </div>
+    </section>
+    <!-- Link to JS -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

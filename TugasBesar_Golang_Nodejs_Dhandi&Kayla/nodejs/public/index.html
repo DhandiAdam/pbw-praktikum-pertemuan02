@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Food</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <!-- <link rel="stylesheet" href="css/input.css" /> -->
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  </head>
+  <body class="bg-gray-200">
+    <!-- Header -->
+    <header class="sticky top-0 h-[90px] shadow-xl z-30 bg-white">
+      <div class="container mx-auto flex justify-between h-full items-center">
+        <a href="#" class="mr-2">
+          <img src="assets/Logo.png" alt="Logo" class="h-20" />
+        </a>
+        <h1 class="text-xl">Online Food</h1>
+        <!-- Navbar -->
+        <nav class="ml-auto">
+          <div class="cursor-pointer lg:hidden" id="nav_trigger_btn">
+            <i class="ri-menu-4-line text-4xl text-primary"></i>
+          </div>
+
+          <ul
+            class="fixed w-full h-0 p-0 bg-white overflow-hidden border-t top-[900px] left-0 right-0 flex flex-col gap-3 lg:relative lg:flex-row lg:p-0 lg:top-0 lg:border-none lg:h-full transition-all duration-300"
+            id="nav_menu"
+          >
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Informasi">Informasi</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#FavoriteMenu">Favorite Menu</a></li>
+            <li><a href="#Reservasi">Reservasi Makanan</a></li>
+            <li><a href="#Tempat">Tempat</a></li>
+      
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Wrapper -->
+    <main class="max-w-[1920px] mx-auto bg-white overflow-hidden">
+      <!-- Grid Image -->
+      <div
+        class="xl:bg-grid xl:bg-center xl:bg-repeat-y fixed top-0 bottom-0 left-0 right-0 z-10"
+      ></div>
+      <!-- Hero -->
+      <section id="home"
+        class="hero h-[640px] xl:h-[840px] bg-hero bg-center lg:bg-cover bg-no-repeat bg-fixed xl:rounded-bl-[290px] relative z-20 bg-black-[400px]"
+      >
+        <div
+          class="container mx-auto h-full flex items-center justify-center xl:justify-start"
+        >
+          <div
+            class="hero__text w-[567px] flex flex-col items-center text-center xl:text-left lg:items-start"
+          >
+            <h1 class="h1 mb-8 text-white">Let yourself enjoy our menu</h1>
+            <p class="text-white mb-8">
+              {{.nama_lengkap}} Restoran yang menyajikan makanan secara online memiliki banyak
+              menu yang bisa dipilih. Makanan ini tentunya penuh dengan gizi dan
+              memiliki rasa yang lezat
+            </p>
+       
+            <a href="Pembelian.html"><button class="btn btn-primary mx-auto xl:mx-0">
+              Menu Makanan 
+              <i class="ri-arrow-right-fill text-accent"></i>
+            </button></a>
+           
+          </div>
+        </div>
+      </section>
+
+      <!-- Icon 3 -->
+      <section id="Informasi" class="steps mt-[80px] xl:mt-[200px] relative z-20">
+        <h2 class="steps__step mx-auto h2 text-center mb-8 mx-auto ">Informasi</h2>
+        <div class="container mx-auto">
+          <!-- Grid Items -->
+          <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">
+            <!-- Informasi Perusahaan -->
+            <div class="steps__step text-center">
+              <div class="mb-4">
+                <i class="ri-file-info-fill text-5xl text-accent"></i>
+              </div>
+              <h3 class="h-3 mb-8">Informasi Perusahaan</h3>
+              <p id="moreText" class="hidden text-xl">
+                Restoran kami mengandalkan layanan makanan online untuk
+                menjangkau pelanggan yang lebih luas, menghadirkan hidangan
+                lezat langsung ke pintu rumah Anda. Dengan kemudahan pemesanan
+                melalui aplikasi dan situs web kami, Anda dapat menikmati
+                berbagai pilihan menu kami tanpa harus keluar rumah. Kami
+                berkomitmen untuk memberikan pengalaman kuliner yang terbaik
+                dengan kualitas makanan yang selalu segar dan pengiriman yang
+                cepat
+              </p>
+              <button
+                class="main_btn text-black hover:text-accent font-bold py-2 rounded- mb-8 mx-auto"
+                onclick="ReadText()"
+              >
+                More Detail
+              </button>
+            </div>
+            <!-- Orderan -->
+            <div class="steps__step text-center">
+              <div class="mb-4">
+                <i class="ri-inbox-2-fill text-5xl text-accent"></i>
+              </div>
+              <h3 class="h-3 mb-8">Order Menu</h3>
+              <p id="orderan" class="hidden text-xl">
+                Nikmati hidangan favorit Anda tanpa antri panjang. Kami
+                menyarankan untuk memesan lebih awal, terutama saat jam sibuk,
+                untuk memastikan pengalaman makan yang lebih lancar dan nyaman.
+                Klik tombol untuk melihat paket
+                <a href="Pembelian.html" class="text-blue-900">Order Sekarang</a>
+              </p>
+              <button
+                class="Orderan text-black hover:text-accent font-bold py-2 rounded- mb-8 mx-auto"
+                onclick="Orderan()"
+              >
+                More Detail
+              </button>
+            </div>
+            <!-- Reservasi -->
+            <div class="steps__step text-center">
+              <div class="mb-4">
+                <i class="ri-shake-hands-fill text-5xl text-accent"></i>
+              </div>
+              <h3 class="h-3 mb-8">Reservasi</h3>
+              <p id="reservasi" class="hidden text-xl">
+                <span class="font-bold text-black hover:text-accent"
+                  >Segera Reservasi Tempat Anda!</span
+                >
+                <br />
+                Nikmati pengalaman kuliner yang tak terlupakan di restoran kami.
+                Jadwalkan kunjungan Anda sekarang untuk menjamin meja yang
+                tersedia. Kami siap menyambut Anda dengan hidangan lezat dan
+                pelayanan terbaik
+                <button id="waButton"
+                  class="text-blue-800 font-bold py-2 mb-8 mx-auto hover:text-accent"
+                  onclick="redirectToWhatsApp()"
+                >
+                  Contact via WhatsApp
+                </button>
+              </p>
+              <button
+                class="Reservasi text-black hover:text-accent font-bold py-2 rounded- mb-8 mx-auto"
+                onclick="Reservasi()"
+              >
+                More Detail
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about mt-[80px] xl:mt-[200px] relative z-20">
+        <div class="container mx-auto xl:px-0">
+          <div
+            class="flex flex-col xl:flex-row text-center xl:text-left justify-between items-center gap-8 xl:gap-[74px]"
+          >
+            <div
+              class="about__text flex-1 order-2 xl:order-none max-w-xl xl:max-w-[410px] flex flex-col items-center xl:items-start gap-8"
+            >
+              <h2 class="h2">Nikmati Hidangan dari Chef Berpengalaman</h2>
+              <p>
+                Kami dengan bangga mempersembahkan hidangan terbaik yang dibuat
+                oleh chef berpengalaman di restoran kami. Setiap hidangan
+                disiapkan dengan keahlian dan dedikasi tinggi, memastikan setiap
+                gigitan adalah pengalaman kuliner yang luar biasa.
+              </p>
+            </div>
+            <!-- Image -->
+            <div
+              class="about__img order-1 xl:order-none max-w-[453px] mx-auto xl:max-w-none xl:mx-0"
+            >
+              <img
+                class="rounded-bl-[50px] rounded-tr-[60px]"
+                src="https://www.oneeducation.org.uk/wp-content/uploads/2021/04/Chef-Hierarchy.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Favorite -->
+      <section id="FavoriteMenu" class="Favorite mt-[100px] xl:mt-[200px] relative z-20">
+        <div
+          class="Favorite__bg container mx-auto bg-accent-secondary rounded-[70px] px-6 py-12"
+        >
+          <h2 class="Favorite__title text-center mb-12 text-4xl font-bold h2">
+            Menu Favorite
+          </h2>
+          <!-- Slidder -->
+          <div class="w-full">
+            <div class="Favorite__slider swiper h-auto">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto h-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 rounded-[30px] flex"
+                        src="assets/testimonial/SateAyam.png"
+                        alt="Sate Ayam"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Sate Ayam</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Sate ayam diminati oleh banyak orang karena ayamnya yang
+                      empuk dan bumbu kacang yang gurih
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 rounded-[30px] flex"
+                        src="assets/testimonial/Kebab.png"
+                        alt="Kebab"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Kebab</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Kelezatan kebab yang dibuat dengan daging pilihan yang
+                      juicy dan bumbu yang rempah khas memiliki banyak penggemar
+                      dikalangan anak muda
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 rounded-tl-[40px] rounded-br-[40px] flex"
+                        src="assets/testimonial/Udang.png"
+                        alt="Udang"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Udang</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Udang banyak digemari oleh banyak orang karena udangnya
+                      masih segar dan lezat dan bumbunya sanggat terbaik
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 rounded-bl-[40px] rounded-tr-[40px] flex"
+                        src="assets/testimonial/Daging.png"
+                        alt="Daging"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Daging</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Dengan Daging yang terpilih dengan cermat dan diolah
+                      dengan keahlian tinggi untuk memastikan kelembutan dan
+                      kelezatan yang sempurna di setiap gigitan
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 rounded-[40px] flex"
+                        src="assets/testimonial/DIMSUM-removebg-preview-1.png"
+                        alt="Dimsum"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Dimsum</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Kulit Dimsum yang lembut membuat isian yang creamy dan
+                      memiliki kaya rasa menciptakan perpaduan tekstur yang
+                      sempurna.kebanyan customer menyukai makanan ini.
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 flex rounded-b-full"
+                        src="assets/testimonial/NasiGoreng.jpg"
+                        alt="Dimsum"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">Nasi Goreng</h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Nasi Goreng sanggat digemari oleh anak muda, bukan hanya
+                      dari segi harga namun kelezatan nasi goreng yang dibuat
+                      oleh chef yang berpengalaman menambah cita rasa bumbu yang
+                      meresap dan enak.
+                    </p>
+                  </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                  <!-- Items -->
+                  <div
+                    class="Favorite__item w-full max-w-[400px] bg-white rounded-[30px] flex flex-col items-center p-4 mx-auto"
+                  >
+                    <div class="text-center">
+                      <img
+                        class="w-[200px] h-auto mb-3 flex rounded-bl-[20px] rounded-tr-[30px]"
+                        src="https://awsimages.detik.net.id/content/2016/02/15/297/salmoncover.jpg"
+                        alt="Dimsum"
+                      />
+                      <h3 class="text-xl font-semibold mb-2 h3">
+                        Sashimi Salmon
+                      </h3>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      Sashimi salmon kami menawarkan rasa murni dari daging ikan
+                      yang lembut dan bertekstur halus. Dipotong dengan presisi
+                      oleh chef berpengalaman, setiap gigitan sashimi salmon
+                      akan memberikan sensasi segar yang tiada tanding.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Makanan -->
+      <section id="Reservasi" class="Reservasi mt-[80px] xl:mt-[150px] relative z-20">
+        <div class="container mx-auto xl:px-0">
+          <!-- Text -->
+          <div class="text-center mb-24">
+            <h2 class="Reservasi__title h2 mb-4">Reservasi Makanan</h2>
+            <p class="Reservasi__subtitle max-w-3xl mx-auto">
+              Nikmati pengalaman kuliner mewah di restoran kami dengan melakukan
+              reservasi terlebih dahulu. Kami menawarkan hidangan eksklusif yang
+              disiapkan oleh chef berpengalaman menggunakan bahan-bahan premium
+            </p>
+          </div>
+          <!-- Grid -->
+          <div
+            class="Makanan__grid grid grid-cols-1 xl:grid-cols-2 gap-x-[104px] gap-y-[56px]"
+          >
+            <!-- Item 1 -->
+            <div class="w-full max-w-[548px] h-full mx-auto">
+              <img
+                class="mb-6 rounded-tr-[40px] rounded-tl-[120px] rounded-br-[120px] w-[500px] h-[300px]"
+                src="https://nibble-images.b-cdn.net/nibble/original_images/restoran_mewah_khas_indonesia_00_f161bc3a40_9Ecg5c1U-.jpg"
+                alt=""
+              />
+              <div class="flex justify-between items-center w-full mb-3">
+                <div class="text-center w-full">
+                  <h3 class="h3">Lobster</h3>
+                  <p>Menu Hidangan Pembuka Reservasi Mewah</p>
+                </div>
+                <button
+                  class="bg-accent-secondary hover:bg-accent/20 w-[70px] h-[70px] rounded-full"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-3xl text-primary pl-1"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="w-full max-w-[548px] h-full mx-auto">
+              <img
+                class="mb-7 rounded-tr-[40px] rounded-bl-[120px] rounded-br-[20px] w-[500px] h-[300px]"
+                src="https://asset-2.tstatic.net/palembang/foto/bank/images/makanan1a_20180518_213402.jpg"
+                alt=""
+              />
+              <div class="flex justify-between items-center w-full mb-3">
+                <div class="text-center w-full">
+                  <h3 class="h3">Paket Reservasi 1</h3>
+                  <p class="mb-2">Menu Hidangan Reservasi mewah</p>
+                  <ul
+                    class="list-disc pl-3 gap-3  grid grid-cols-2"
+                
+                  >
+                    <li>Free Lobster</li>
+                    <li>Sate Ayam</li>
+                    <li>Ikan Besar</li>
+                    <li>Mie Telor</li>
+                    <li>Daging</li>
+                    <li>Risol Daging</li>
+                    <li>Udang</li>
+                    <li>Request</li>
+                  </ul>
+                
+                </div>
+                <button
+                  class="bg-accent-secondary hover:bg-accent/20 w-[70px] h-[70px] rounded-full"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-3xl text-primary pl-1"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 3-->
+            <div class="w-full max-w-[548px] h-full mx-auto">
+              <img
+                class="mb-7 rounded-tr-[40px] rounded-tl-[120px] rounded-br-[120px] w-[500px] h-[300px]"
+                src="https://asset-2.tstatic.net/travel/foto/bank/images/beef-steak.jpg"
+                alt=""
+              />
+              <div class="flex justify-between items-center w-full mb-2">
+                <div class="text-center w-full">
+                  <h3 class="h3">Paket Reservasi 2</h3>
+                  <p class="mb-2">Menu Hidangan Reservasi mewah</p>
+                  <ul
+                    class="list-disc pl-3 gap-3  grid grid-cols-2"
+                    
+                  >
+                    <li>Free Lobster</li>
+                    <li>Beef-Steak</li>
+                    <li>Kentang Cruncyh</li>
+                    <li>Request</li>
+                  </ul>
+                  
+                </div>
+                <button
+                  class="bg-accent-secondary hover:bg-accent/20 w-[70px] h-[70px] rounded-full"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-3xl text-primary pl-1"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <!-- Item 4-->
+            <div class="w-full max-w-[548px] h-full mx-auto">
+              <img
+                class="mb-7 rounded-tr-[40px] rounded-bl-[120px] rounded-tr-[100px] w-[500px] h-[300px]"
+                src="https://radio.solopos.com/assets/dokumen//2017/04/10-Makanan-Paling-Enak-Didunia.jpg"
+                alt=""
+              />
+              <div class="flex justify-between items-center w-full mb-2">
+                <div class="text-center w-full">
+                  <h3 class="h3">PaketReservasi 3</h3>
+                  <p class="mb-2">Menu Hidangan Reservasi mewah</p>
+                  <ul
+                  class="list-disc pl-3 gap-3  grid grid-cols-2"
+                  
+                >
+                  <li>Free Lobster</li>
+                  <li>Udang</li>
+                  <li>Ayam</li>
+                  <li>Kentang</li>
+                  <li>Sayur</li>
+                  <li>Request</li>
+                </ul>
+                </div>
+                <button
+                  class="bg-accent-secondary hover:bg-accent/20 w-[70px] h-[70px] rounded-full"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-3xl text-primary pl-1"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section
+        class="stats mt-[80px] xl:mt-[150px] relative z-20 bg-accent-secondary py-[80px] xl:py-[150px]"
+      >
+        <div class="container mx-auto">
+          <!-- Grid -->
+          <div class="grid grid-cols-1 xl:grid-cols-4 gap-12">
+            <!-- Grid item -->
+            <div class="stats__item text-center xl:border-r xl:border-accent">
+              <h3 class="h1 text-6xl font-primary text-accent">12</h3>
+              <p>Tahun Pengalaman Restoran</p>
+            </div>
+            <!-- Grid item -->
+            <div class="stats__item text-center xl:border-r xl:border-accent">
+              <h3 class="h1 text-6xl font-primary text-accent">85</h3>
+              <p>Aneka Makanan diIndonesia</p>
+            </div>
+            <!-- Grid item -->
+            <div class="stats__item text-center xl:border-r xl:border-accent">
+              <h3 class="h1 text-6xl font-primary text-accent">15</h3>
+              <p>Cabang diIndonesia</p>
+            </div>
+            <!-- Grid item -->
+            <div class="stats__item text-center xl:border-r xl:border-accent">
+              <h3 class="h1 text-6xl font-primary text-accent">950</h3>
+              <p>Customer Senang</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tempat -->
+      <section id="Tempat" class="Tempat mt-[80px] xl:mt-[150px] relative z-20">
+        <div class="container mx-auto px-0">
+          <!-- Text -->
+          <div class="max-w-[810px] mx-auto text-center mb-[52px]">
+            <h2 class="Tempat__title h2 mb-3">Tempat Restoran Kami</h2>
+            <p class="Tempat__subtitle">
+              Tempat Restoran kami dijamin bikin anda ketagihan dengan
+              pemandangan yang bagus
+            </p>
+          </div>
+          <!-- Grid -->
+          <div class="Tempat__grid grid grid-cols-1 xl:grid-cols-3 gap-[27px]">
+            <!-- Grid Item -->
+            <div
+              class="Tempat__item w-full max-w-[382px] h-[520px] border border-primary/20 rounded-[62px] p-[20px] hover:bg-accent-secondary transition-all group cursor-pointer mx-auto xl:mx-0"
+            >
+              <img
+                class="rounded-t-[70px] mb-5 h-[250px]"
+                src="https://image.cermati.com/q_70/mkgfres66dg2mcy8baz4"
+                alt=""
+              />
+              <div class="flex flex-col gap-[30px]">
+                <h3 class="h3">Tempat Restoran Termewah</h3>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-base">
+                  Jl. Kemang Raya No.29 6, RT.6/RW.1, Bangka, Kec. Mampang
+                  Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
+                  12730
+                </p>
+                <button
+                  class="bg-accent-secondary w-auto h-auto rounded-full group-hover:bg-white transition-all" onclick="TempatMewah1()"
+                > 
+                  <i class="ri-arrow-right-s-line"></i> 
+                </button>
+              </div>
+            </div>
+            <!-- Grid Item 2 -->
+            <div
+              class="Tempat__item w-full max-w-[382px] h-[520px] border border-primary/20 rounded-[62px] p-[20px] hover:bg-accent-secondary transition-all group cursor-pointer mx-auto xl:mx-0"
+            >
+              <img
+                class="rounded-t-[70px] mb-5 h-[250px]"
+                src="https://cdn.idntimes.com/content-images/community/2021/11/jak-house-of-yuen-venue-bede63ddc109b15b99f580a172e1e513-da9d2a3e0e1846c6a2581e3e1073f8b6_600x400.jpg"
+                alt=""
+              />
+              <div class="flex flex-col gap-[30px]">
+                <h3 class="h3 mb-2">Tempat Restoran Termewah</h3>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-base">
+                  Jl. Gunawarman No.3 6, RT.6/RW.3, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110
+                </p>
+                <button
+                  class="bg-accent-secondary w-auto h-auto rounded-full group-hover:bg-white transition-all"onclick="TempatMewah2()"
+                >
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Grid Item 3 -->
+            <div
+              class="Tempat__item w-full max-w-[382px] h-[520px] border border-primary/20 rounded-[62px] p-[20px] hover:bg-accent-secondary transition-all group cursor-pointer mx-auto xl:mx-0"
+            >
+              <img
+                class="rounded-t-[70px] mb-5 h-[250px]"
+                src="https://ik.imagekit.io/tvlk/blog/2023/10/Screenshot-2023-10-12-145045.png?tr=dpr-2,w-675"
+                alt=""
+              />
+              <div class="flex flex-col gap-[30px]">
+                <h3 class="h3 mb-2">Tempat Restoran Termewah</h3>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-base">
+                  Gedung The Energy, SCBD Lot Jl. Jend. Sudirman kav 52-53 No.11A, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190
+                </p>
+                <button
+                  class="bg-accent-secondary w-auto h-auto rounded-full group-hover:bg-white transition-all"onclick="TempatMewah3()"
+                >
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="Contact mt-[80px] xl:mt-[150px] relative z-20">
+        <div
+          class="Contact__container container mx-auto bg-primary sm:rounded-[70px] py-[80px]"
+        >
+          <div class="Contact__text max-w-[640px] mx-auto text-center">
+            <h2 class="Contact__title h2 mb-4 text-white">LET'S CONTACT NOW</h2>
+            <p
+              class="Contact__description text-white mb-8 max-w-sm xl:max-w-none mx-auto"
+            >
+              Jika anda membutuhkan bantuan, kami siap membantu anda. Silahkan
+              isi form di bawah ini.
+            </p>
+            <button class="btn btn-accent border mx-auto" onclick="Memesan()">
+              Contact Know <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer mt-[80px] xl:mt-[150px] relative z-20">
+        <div class="container mx-auto px-0">
+          <div class="flex flex-col xl:flex-row xl:gap-[100px] xl:mb-[150px]">
+            <div
+              class="footer__item w-full max-w-[400px] mx-auto mb-8 text-center xl:text-left"
+            >
+              <div class="flex items-center justify-center xl:justify-start">
+                <a class="block w-[80px] h-[80px]" href="#">
+                  <img
+                    src="assets/Logo.png"
+                    alt="Logo"
+                    class="w-full h-full object-contain"
+                  />
+                </a>
+                <h3 class="text-[30px]">Online Food</h3>
+              </div>
+              <p class="mb-8 text-xl">
+                Onnline Food adalah Restaurant Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Doloremque, iusto.
+              </p>
+              <ul
+                class="text-primary flex gap-[54px] justify-center xl:justify-start"
+              >
+                <li>
+                  <a href="" class="ri-facebook-fill"></a>
+                </li>
+                <li>
+                  <a href="" class="ri-instagram-line"></a>
+                </li>
+                <li>
+                  <a href="" class="ri-twitter-x-line"></a>
+                </li>
+                <li>
+                  <a href="" class="ri-whatsapp-line"></a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex-1 flex flex-col xl:flex-row text-center xl:text-left gap-12 xl:gap-[100px] xl:justify-end "
+            >
+            <div class="footer__item">
+              <h3 class="h3 mb-3">Pages</h3>
+              <ul class="flex flex-col gap-4">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#Informasi">Informasi</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#FavoriteMenu">Favorite Menu</a></li>
+                <li><a href="#Reservasi">Reservasi Makanan</a></li>
+                <li><a href="#Tempat">Tempat</a></li>
+        
+              </ul>
+            </div>
+            <div class="footer__item">
+              <h3 class="h3 mb-3">Services</h3>
+              <ul class="flex flex-col gap-4">
+                <li><a href="#">Chef</a></li>
+                <li><a href="#">Order Menu Us</a></li>
+                <li><a href="#">Reservasi</a></li>
+                <li><a href="#">Makanan Indonesia</li>
+                
+              </ul>
+            </div>
+            <div class="footer__item max-w-[260px] mx-auto xl:mx-0">
+              <h3 class="h3 mb-3">Contact</h3>
+              <div class="flex flex-col gap-6 text-[20px]">
+                <p>Projek Onnline Food Dhandi dan Kayla</p>
+                <p>DhandiAdam-4522210147</p>
+                <p>Kaylatifa-Zahabiy-4522210152</p>
+                <p>(+62)813-1924-0256</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <p class="footer__copyright text-center text-lg py-10 ">Copyright &copy; Dhandi&Kayla 2024. All rights reserved </p>
+      </footer>
+      <!-- Temporary Div -->
+      <!-- <div class="h-[2000px]"></div> -->
+    </main>
+
+    <!-- Scroll Reveal JS -->
+    <script src="js/scrollreveal.min.js"></script>
+    <!-- Swiper -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/Tailwind.js"></script>
+    <script>
+  //    function logout() {
+  //   fetch('/logout', {
+  //     method: 'POST',
+  //     credentials: 'include'
+  //   })
+  //   .then(response => {
+  //     if (response.ok) {
+  //       window.location.href = '/login';
+  //     } else {
+  //       console.error('Logout failed');
+  //     }
+  //   })
+  //   .catch(error => console.error('Error:', error));
+  // }
+    </script>
+  </body>
+</html>
